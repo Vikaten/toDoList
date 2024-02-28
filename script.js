@@ -14,17 +14,15 @@ noticeButton.addEventListener("click", function () {
     doing: space.value,
     checkbox: false,
     };
-    toDoList.push(toDo);
-    console.log(toDoList);
-    localStorage.setItem("todo", JSON.stringify(toDoList));
-    
-    // хотела сделать предупреждение об отсутсвии стлов в строке, выдает ошибку неизвестного doing
-    // if (toDoList[length - 1].doing.length > 0) {
-    //     createNewDoing();
-    // }
-    // else {
-    //     alert("Ваша строка должна пустая. Заполните ее, пожалуйста!");
-    // }
+    if (toDo.doing.length > 0) {
+      toDoList.push(toDo);
+      createNewDoing();
+    }
+    else {
+      alert("Ваша строка должна пустая. Заполните ее, пожалуйста!");
+    }
+  console.log(toDoList);
+  localStorage.setItem("todo", JSON.stringify(toDoList));
 });
 
 // новая строка списка
