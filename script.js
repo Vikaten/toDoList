@@ -14,7 +14,8 @@ if (localStorage.getItem("todo")) {
 noticeButton.addEventListener("click", function () {
     let toDo = {
       doing: space.value,
-      checkbox: false
+      checkbox: false,
+      delete: false
     };
     if (toDo.doing.length > 0) {
       toDoList.push(toDo);
@@ -64,8 +65,10 @@ container.addEventListener('change', function (e) {
 const deleteButton = document.querySelectorAll('.trash');
 deleteButton.forEach(el => {
   el.addEventListener('click', function (e) {
-  let checkTrash = e.target.closest('.checkTrash');
-  console.log(checkTrash)
-  checkTrash.remove()
-})
+    let checkTrash = e.target.closest('.checkTrash');
+    const indexToRemove = parseInt(checkTrash.dataset.index);
+    toDoList.splice(indexToRemove, 1);
+    checkTrash.remove()
+  localStorage.setItem('todo', JSON.stringify(toDoList))
+  })
 })
