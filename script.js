@@ -27,22 +27,29 @@ noticeButton.addEventListener("click", function () {
 });
 
 // новая строка списка
-function createNewDoing() {
-  let pr = "";
-  toDoList.forEach((el, index) => {
-    pr += `
-        <li id = 'item${index}'>
-        <div class = 'checkText'>
-            <input type = 'checkbox' class = 'checkbox' id = 'item${index}' ${el.checkbox ? 'checked' : ''}>
-            <label for = 'item${index}'>${el.doing}</label>
-        </div>
-        </li>`;
-    space.value = "";
-    ul.innerHTML = pr;
-  });
+function createNewDoing() { 
+  let pr = ""; 
+  toDoList.forEach((el, index) => { 
+    pr += ` 
+        <li id = 'item${index}' class = 'li_item'> 
+        <div class = 'checkTrash'> 
+          <div class = 'checkText'> 
+              <input type = 'checkbox' class = 'checkbox'  id = 'item${index}' ${el.checkbox ? 'checked' : ''}> 
+          </div> 
+          <label for = 'item${index}'>
+          ${el.doing}
+          </label> 
+          <div>
+            <img src = 'trash.svg' class = 'trash'> 
+          </div>
+        </div> 
+        </li>`; 
+    space.value = ""; 
+    ul.innerHTML = pr; 
+  }); 
 }
 
-// сохранение состояния checkbox
+// сохранение состояния checkbox 
 container.addEventListener('change', function (e) {
   let targetTag = e.target.getAttribute('id');
   toDoList.forEach((el, index) => {
@@ -51,4 +58,14 @@ container.addEventListener('change', function (e) {
       localStorage.setItem("todo", JSON.stringify(toDoList));
     }
   })
+})
+
+// удаление блока
+const deleteButton = document.querySelectorAll('.trash');
+deleteButton.forEach(el => {
+  el.addEventListener('click', function (e) {
+  let checkTrash = e.target.closest('.checkTrash');
+  console.log(checkTrash)
+  checkTrash.remove()
+})
 })
