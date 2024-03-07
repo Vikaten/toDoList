@@ -268,3 +268,8 @@ input:checked+label {
     }
     
 }
+
+:root {
+    --main-text-color-light: #000000; /* Цвет текста для светлой темы */
+    --main-text-color-dark: #000000;  /* Цвет текста для темной темы */
+  }
