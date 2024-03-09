@@ -23,7 +23,7 @@ noticeButton.addEventListener('click', function () {
     if (toDo.doing.length > 0) {
       toDoList.push(toDo);
       createNewDoing();
-      deleteBlock();
+      
     }
     else {
       alert('Ваша строка должна пустая. Заполните ее, пожалуйста!');
@@ -76,6 +76,7 @@ function deleteBlock() {
     })
   })
 }
+deleteBlock();
 
 // создание кнопки "удалить все"
 deleteAll.addEventListener('click', function (e) {
