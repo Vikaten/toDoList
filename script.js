@@ -26,7 +26,7 @@ noticeButton.addEventListener('click', function () {
       deleteBlock();
     }
     else {
-      alert('Ваша строка должна быть пустая. Заполните ее, пожалуйста!');
+      alert('Ваша строка не должна быть пустая. Заполните ее, пожалуйста!');
     }
   localStorage.setItem('todo', JSON.stringify(toDoList));
 });
