@@ -89,26 +89,26 @@ deleteAll.addEventListener('click', function (e) {
 })
 
 // создание часов
-window.onload = function() {
-  window.setInterval(function() {
-    let date = new Date()
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
+// window.onload = function() {
+//   window.setInterval(function() {
+//     let date = new Date()
+//     let hours = date.getHours();
+//     let minutes = date.getMinutes();
+//     let seconds = date.getSeconds();
 
-    if (hours < 10) {
-      hours = '0' + hours;
-    }
+//     if (hours < 10) {
+//       hours = '0' + hours;
+//     }
 
-    if (minutes < 10) {
-      minutes = '0' + minutes;
-    }
+//     if (minutes < 10) {
+//       minutes = '0' + minutes;
+//     }
 
-    if (seconds < 10) {
-      seconds = '0' + seconds;
-    }
+//     if (seconds < 10) {
+//       seconds = '0' + seconds;
+//     }
 
-    let time = hours +':'+ minutes + ':' + seconds;
-    clock.innerText = time;
-  }, 1000);
-}
+//     let time = hours +':'+ minutes + ':' + seconds;
+//     clock.innerText = time;
+//   }, 1000);
+// }
