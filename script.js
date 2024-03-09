@@ -23,10 +23,10 @@ noticeButton.addEventListener('click', function () {
     if (toDo.doing.length > 0) {
       toDoList.push(toDo);
       createNewDoing();
-      
+      deleteBlock();
     }
     else {
-      alert('Ваша строка должна пустая. Заполните ее, пожалуйста!');
+      alert('Ваша строка должна быть пустая. Заполните ее, пожалуйста!');
     }
   localStorage.setItem('todo', JSON.stringify(toDoList));
 });
